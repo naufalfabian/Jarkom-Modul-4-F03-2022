@@ -20,15 +20,17 @@ Praktikum Jaringan Komputer Modul 4 Kelompok F 03 2022
 - Menggunakan metode classless CIDR pada GNS3
 
 # VLSM dengan Cisco
+![image](assets/vlsm(2).png)
+![image](assets/vlsm.png)
 
 # CIDR dengan GNS3
-
+![image](assets/cidr.png)
 ## Topologi pada GNS3
-
+![image](assets/topologi.png)
 ## Subnetting
 
 ### Penggabungan subnet
-![image](pembagian.jpg)
+![image](/assets/penggabungan.jpg)
 
 ### Pembagian IP
 
