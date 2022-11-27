@@ -20,8 +20,129 @@ Praktikum Jaringan Komputer Modul 4 Kelompok F 03 2022
 - Menggunakan metode classless CIDR pada GNS3
 
 # VLSM dengan Cisco
+Pertama-tama, bagi topologi yang sudah diberikan ke dalam beberapa subnet kecil sesuai kebutuhan:
+![vslm_subnet](assets/vlsm.png)
+
+Tentukan jumlah IP yang diperlukan beserta dengan netmasknya untuk setiap subnet yang ada :
+
+|  Subnet   | Jumlah IP | Netmask |
+| :-------: | :-------: | :-----: |
+|    A1     |   1001    |   /22   |
+|    A2     |    501    |   /30   |
+|    A3     |   271     |   /30   |
+|    A4     |   251     |   /24   |
+|    A5     |   212     |   /30   |
+|    A6     |    121    |   /24   |
+|    A7     |    121    |   /23   |
+|    A8     |     71    |   /30   |
+|    A9     |     51    |   /30   |
+|    A10    |     2     |   /30   |
+|    A11    |     2     |   /30   |
+|    A12    |     2     |   /30   |
+|    A13    |     2     |   /30   |
+|    A14    |     2     |   /30   |
+|    A15    |     2     |   /30   |
+|    A16    |     2     |   /30   |
+|    A17    |     2     |   /30   |
+|    A18    |     2     |   /30   |
+| **Total** | **2618**  | **/20** |
+
+Berdasarkan data tersebut, susun tree subnet VLSM seperti berikut :
 ![image](assets/vlsm(2).png)
-![image](assets/vlsm.png)
+
+Dengan demikian, didapatkan NID untuk masing - masing subnet sebagai berikut :
+|  Subnet   | Network ID| Netmask |
+| :-------: | :-------: | :-----: |
+|    A1     |10.30.8.0  |   255.255.252.0   |
+|    A2     |    10.30.6.0    |   255.255.254.0   |
+|    A3     |   10.30.4.0     |   255.255.254.0   |
+|    A4     |   10.30.3.0     |   255.255.255.0   |
+|    A5     |   10.30.2.0     |   255.255.255.0   |
+|    A6     |    10.30.1.128    |   255.255.255.128   |
+|    A7     |     10.30.1.0    |   255.255.255.128   |
+|    A8     |     10.30.0.128    |   255.255.255.128   |
+|    A9     |     10.30.0.64     |   255.255.255.192   |
+|    A10    |     10.30.0.32     |   255.255.255.252   |
+|    A11    |     10.30.0.28     |   255.255.255.252   |
+|    A12    |     10.30.0.24     |   255.255.255.252   |
+|    A13    |     10.30.0.20     |   255.255.255.252   |
+|    A14    |     10.30.0.16     |   255.255.255.252   |
+|    A15    |     10.30.0.12     |   255.255.255.252   |
+|    A16    |     10.30.0.8    |   255.255.255.252   |
+|    A17    |     10.30.0.4     |   255.255.255.252   |
+|    A18    |     10.30.0.0     |   255.255.255.252   |
+
+Masing - masing interface pada sebuah subnet dapat diberikan IP sesuai dengan aturan yang telah diberikan di atas.
+
+- Guideau
+![image](assets/vlsm/guideau.png)
+
+- The Minister
+![image](assets/vlsm/minister.png)
+
+- The Dauntless
+![image](assets/vlsm/dauntless.png)
+
+- Johan
+![image](assets/vlsm/johan.png)
+
+- Phanora
+![image](assets/vlsm/phanora.png)
+
+- The Order
+![image](assets/vlsm/order.png)
+
+- Ashaf
+![image](assets/vlsm/ashaf.png)
+
+- The Resonance
+![image](assets/vlsm/resonance.png)
+
+- The Beast
+![image](assets/vlsm/beast.png)
+
+- The Instrument
+![image](assets/vlsm/instrument.png)
+
+- Matt Cugat
+![image](assets/vlsm/mattcugat.png)
+
+- The Firefist
+![image](assets/vlsm/firefist.png)
+
+- Keith
+![image](assets/vlsm/keith.png)
+
+- The Queen
+![image](assets/vlsm/queen.png)
+
+- The Witch
+![image](assets/vlsm/witch.png)
+
+- Oakleave
+![image](assets/vlsm/oakleave.png)
+
+- The Magical
+![image](assets/vlsm/magical.png)
+
+- Corvekt
+![image](assets/vlsm/corvekt.png)
+
+- Haines
+![image](assets/vlsm/haines.png)
+
+- The Profound
+![image](assets/vlsm/profound.png)
+
+- Spendrow
+![image](assets/vlsm/spendrow.png)
+
+- Helga
+![image](assets/vlsm/helga.png)
+
+## Routing
+
+
 
 # CIDR dengan GNS3
 ![image](assets/cidr.png)
@@ -270,67 +391,111 @@ iface eth1 inet static
 > Ashaf
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.16.2
+	netmask 255.255.255.192
+	gateway 10.30.16.1
 ```
 
 > Guidae
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.4.2
+	netmask 255.255.252.0
+	gateway 10.30.4.1
 ```
 
 > Phanora
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.2.2
+	netmask 255.255.255.0
+    gateway 10.30.2.1
 ```
 
 > Johan
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.2.3
+	netmask 255.255.255.0
+    gateway 10.30.2.1
 ```
 
 > Corvekt
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.192.3
+	netmask 255.255.254.0
+    gateway 10.30.192.1
 ```
 
 > Haines
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.192.2
+	netmask 255.255.254.0
+    gateway 10.30.192.1
 ```
 
 > MattCugat
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.136.2
+	netmask 255.255.255.128
+    gateway 10.30.136.1
 ```
 
 > Spendrow
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.146.2
+	netmask 255.255.255.128
+    gateway 10.30.146.1
 ```
 
 > Helga
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.144.2
+	netmask 255.255.255.128
+    gateway 10.30.144.1
 ```
 
 > Oakleave
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.132.2
+	netmask 255.255.254.0
+    gateway 10.30.132.1
 ```
 
 > Keith
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.130.3
+	netmask 255.255.255.0
+    gateway 10.30.130.1
 ```
 
 #### SERVER
@@ -338,13 +503,21 @@ iface eth1 inet static
 > The Beast
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.64.2
+	netmask 255.255.255.252
+    gateway 10.30.64.1
 ```
 
 > The Witch
 
 ```
-
+auto eth0
+iface eth0 inet static
+	address 10.30.128.2
+	netmask 255.255.255.252
+    gateway 10.30.128.1
 ```
 
 ## Routing
@@ -401,29 +574,4 @@ iface eth1 inet static
 ### The Queen
 
 ```
-
 ```
-
-## Testing 
-
-> Testing dapat dilakukan dengan melakukan ping terhadap IP address subnet / node lain
-
-### The Witch ke Phanora
-
-
-### The Witch ke The Beast
-
-
-### Guidae ke Helga
-
-
-### Phanora ke Spendrow
-
-
-### The Queen ke the Dauntless
-
-
-### The Minister ke The Magical
-
-
-### The Resonance ke The Witch
